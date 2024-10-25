@@ -1,0 +1,39 @@
+Source: cpr
+Section: libs
+Priority: optional
+Maintainer: Manh Tuong Hoang <mthoang93@gmail.com>
+Build-Depends: debhelper-compat (= 13), cmake, libcurl4-openssl-dev
+Standards-Version: 4.6.2
+Homepage: https://github.com/libcpr/cpr
+Vcs-Browser: https://github.com/mthoang93/cpr
+Vcs-Git: https://github.com/mthoang93/cpr.git
+
+Package: libcpr1
+Section: libs
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: C++ wrapper around the libcurl library - development kit
+ This package contains the header files and development
+ libraries of cpr, Curl for People.
+ .
+ The project is inspried by the Python Request project.
+ Using the more expressive language facilities of C++11,
+ it captures the essence of making network calls into a
+ few concise idioms.
+
+Package: libcpr-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: libcpr1 (= ${binary:Version}), ${misc:Depends}
+Suggests: libcurl4-openssl-dev
+Description: C++ wrapper around the libcurl library - runtime library
+ This package contains the runtime, shared library of cpr,
+ Curl for People.
+ .
+ The project is inspried by the Python Request project.
+ Using the more expressive language facilities of C++11,
+ it captures the essence of making network calls into a
+ few concise idioms.
