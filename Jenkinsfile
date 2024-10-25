@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage ("Builds") {
             steps {
+                sh "echo hello"
                 sh "pwd && debuild -i -us -uc -b"
             }
         }
